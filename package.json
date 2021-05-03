@@ -1,6 +1,6 @@
 {
   "private": true,
-  "name": "sanity-sapper-blog",
+  "name": "kagen-coffee-and-crepes",
   "version": "1.0.26",
   "scripts": {
     "build": "lerna run build --parallel",

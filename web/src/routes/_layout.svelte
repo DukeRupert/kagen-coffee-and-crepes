@@ -1,22 +1,58 @@
 <script>
-	import Nav from '../components/Nav.svelte';
-
-	export let segment;
+  import Nav from "../components/Nav.svelte";
+  import Footer from "../components/Footer.svelte";
+  import { dropdown } from "../store";
+  export let segment;
 </script>
 
+<div
+  class="parent dark-mode-transition {$dropdown ? 'stop-scroll' : ''}"
+  id="parent"
+>
+  <header>
+    <Nav {segment} />
+  </header>
+  <main>
+    <slot />
+  </main>
+  <footer>
+    <Footer />
+  </footer>
+</div>
+
 <style>
-	main {
-		position: relative;
-		max-width: 56em;
-		background-color: white;
-		padding: 2em;
-		margin: 0 auto;
-		box-sizing: border-box;
-	}
+  .parent {
+    height: 100vh;
+
+    /* grid container settings */
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas:
+      "header"
+      "main"
+      "footer";
+    background-color: var(--background);
+    overflow-x: hidden;
+  }
+
+  .parent > header {
+    grid-area: header;
+  }
+
+  .parent > main {
+    grid-area: main;
+
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+  }
+
+  .parent > footer {
+    grid-area: footer;
+  }
+
+  .stop-scroll {
+    overflow-y: hidden;
+  }
 </style>
-
-<Nav {segment}/>
-
-<main>
-	<slot></slot>
-</main>

@@ -1,36 +1,130 @@
-body {
-	margin: 0;
-	font-family: Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-	font-size: 14px;
-	line-height: 1.5;
-	color: #333;
+@import url("https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500&display=swap");
+
+/* global styles */
+:root {
+  /* Theme Colors */
+  --custard: #f8c24c;
+  --red: #cd1222;
+  --foreground-gray: #1c1c1e;
+
+  /* Theme Variables*/
+  --color: black;
+  --color-dark: white;
+
+  --bg: whitesmoke;
+  --bg-dark: black;
+
+  --elevated: white;
+  --elevated-dark: var(--foreground-gray);
+
+  --nav-size: 80px;
+  --nav-background: var(--custard);
+  --nav-background-dark: black;
+
+  --footer-bg: var(--bg);
+  --footer-bg-dark: var(--bg-dark);
+
+  --button-color: var(--custard);
+  --button-color-dark: black;
+
+  --button-bg: var(--custard);
+  --button-bg-dark: black;
+
+  /* Timing */
+  --dark-mode-timing: 200ms;
+  --animation-timing: 500ms;
+
+  /* Typeography */
+  --h1: 3.052rem;
+  --h2: 2.441rem;
+  --h3: 1.953rem;
+  --h4: 1.563rem;
+  --h5: 1.25rem;
+
+  /* spacers */
+  --spacer-sm: 0.5rem;
+  --spacer-md: 1rem;
+  --spacer-lg: 2rem;
 }
 
-h1, h2, h3, h4, h5, h6 {
-	margin: 0 0 0.5em 0;
-	font-weight: 400;
-	line-height: 1.2;
+html {
+  font-size: 100%;
+} /*16px*/
+
+/* Increase font size when screen is larger than 1080px wide */
+@media only screen and (min-width: 1080px) {
+  html {
+    font-size: 20px;
+  }
+}
+
+body {
+  background: var(--background);
+  font-family: "EB Garamond", -apple-system, Roboto, sans-serif;
+  font-weight: 400;
+  line-height: 1.75;
+  color: #000000;
+  margin: 0;
+  color: var(--color);
+}
+
+section {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 0 24px;
+  box-sizing: border-box;
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  margin: 3rem 0 1.38rem;
+  font-family: "EB Garamond", serif;
+  font-weight: 400;
+  line-height: 1.3;
 }
 
 h1 {
-	font-size: 2em;
+  margin-top: 0;
+  font-size: 3.052rem;
+}
+
+h2 {
+  font-size: 2.441rem;
+}
+
+h3 {
+  font-size: 1.953rem;
+}
+
+h4 {
+  font-size: 1.563rem;
+}
+
+h5 {
+  font-size: 1.25rem;
+}
+
+small,
+.text_small {
+  font-size: 0.8rem;
 }
 
 a {
-	color: inherit;
+  color: inherit;
 }
 
 code {
-	font-family: menlo, inconsolata, monospace;
-	font-size: calc(1em - 2px);
-	color: #555;
-	background-color: #f0f0f0;
-	padding: 0.2em 0.4em;
-	border-radius: 2px;
-}
-
-@media (min-width: 400px) {
-	body {
-		font-size: 16px;
-	}
+  font-family: menlo, inconsolata, monospace;
+  font-size: calc(1em - 2px);
+  color: #555;
+  background-color: #f0f0f0;
+  padding: 0.2em 0.4em;
+  border-radius: 2px;
 }

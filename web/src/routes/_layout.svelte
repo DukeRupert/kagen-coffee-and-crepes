@@ -9,10 +9,9 @@
   class="parent dark-mode-transition {$dropdown ? 'stop-scroll' : ''}"
   id="parent"
 >
-  <header>
-    <Nav {segment} />
-  </header>
+  <header />
   <main>
+    <Nav {segment} />
     <slot />
   </main>
   <footer>

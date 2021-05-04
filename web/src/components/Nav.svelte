@@ -1,4 +1,6 @@
 <script>
+  import BurgerMenu from "./BurgerMenu.svelte";
+
   import { dropdown } from "../store";
   import { fly } from "svelte/transition";
   import { quadInOut } from "svelte/easing";
@@ -46,18 +48,7 @@
     <li class="menu-item">
       <a href="about">About</a>
     </li>
-    <!-- Burger Menu -->
-    <li class="burger">
-      <button
-        on:click={toggleDropdown}
-        class="hamburger hamburger--collapse"
-        type="button"
-      >
-        <span class="hamburger-box">
-          <span class="hamburger-inner" />
-        </span>
-      </button>
-    </li>
+    <BurgerMenu />
   </ul>
   {#if $dropdown}
     <div

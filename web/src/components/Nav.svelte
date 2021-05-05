@@ -1,10 +1,13 @@
 <script>
+  import NavDropdown from "./NavSubmenu.svelte";
+
   import BurgerMenu from "./BurgerMenu.svelte";
 
   import { dropdown } from "../store";
   import { fly } from "svelte/transition";
   import { quadInOut } from "svelte/easing";
   import NavLogo from "./NavLogo.svelte";
+  import NavSubmenu from "./NavSubmenu.svelte";
 
   export let segment;
 
@@ -26,23 +29,10 @@
       name="Kagen's Coffee & Crepes"
       onClick={closeDropdown}
     />
-    <!-- Dropdown Menu for Guides -->
+    <!-- Locations -->
     <li class="dropdown menu-item">
-      <a href="guides">Guides</a>
-      <ul class="dropdown-menu">
-        <li class="dropdown-item-1">
-          <a href="/guides/baldurs-gate-1">
-            <img src="bg1.png" alt="Baldur's Gate 1 logo" />
-            Baldur's Gate 1
-          </a>
-        </li>
-        <li class="dropdown-item-2">
-          <a href="/guides/baldurs-gate-3">
-            <img src="bg3.png" alt="Baldur's Gate 3 logo" />
-            Baldur's Gate 3
-          </a>
-        </li>
-      </ul>
+      <a href="guides">Locations</a>
+      <NavSubmenu />
     </li>
     <!-- About -->
     <li class="menu-item">

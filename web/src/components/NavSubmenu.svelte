@@ -1,28 +1,51 @@
 <script>
-  import { dropdown } from "../store";
+  export let items = [];
 </script>
 
 <ul class="dropdown-menu">
-  <li class="dropdown-item-1">
-    <a href="/"> Tri-Cities </a>
-  </li>
-  <li class="dropdown-item-2">
-    <a href="/"> Spokane </a>
-  </li>
+  {#each items as item, i}
+    <li class="dropdown-item-{i}">
+      <a href={item.route}> {item.name} </a>
+    </li>
+  {/each}
 </ul>
 
 <style>
-  a {
-    text-decoration: none;
-  }
-
   ul {
     margin: 0;
     padding: 0;
     list-style-type: none;
   }
 
-  .dropdown:hover > .dropdown-menu {
+  a {
+    text-decoration: none;
+  }
+
+  li {
+    display: flex;
+    width: 100%;
+    height: auto;
+    box-sizing: border-box;
+    padding: 8px;
+    align-items: center;
+    background-color: var(--nav-bg);
+    opacity: 0;
+    transition: all var(--dark-mode-timing) ease-in;
+  }
+
+  li:hover {
+    background-color: var(--nav-hover-bg);
+    color: var(--nav-hover-color);
+  }
+
+  a {
+    display: flex;
+    width: 100%;
+    height: auto;
+    align-items: center;
+  }
+
+  .menu-item:hover > .dropdown-menu {
     display: flex;
     flex-direction: column;
     opacity: 1;
@@ -39,35 +62,12 @@
     transition: all var(--dark-mode-timing);
   }
 
-  .dropdown-menu > li {
-    display: flex;
-    width: 100%;
-    height: auto;
-    box-sizing: border-box;
-    padding: 8px;
-    align-items: center;
-    background-color: var(--bg);
-    opacity: 0;
-    transition: all var(--dark-mode-timing) ease-in;
-  }
-
-  .dropdown-menu > li:hover {
-    background-color: var(--elevated);
-  }
-
-  .dropdown-menu > li > a {
-    display: flex;
-    width: 100%;
-    height: auto;
-    align-items: center;
-  }
-
-  .dropdown-item-1 {
-    animation: translateX 200ms 100ms ease-in-out forwards;
+  .dropdown-item-0 {
+    animation: growDown 200ms 100ms ease-in-out forwards;
     transform-origin: top center;
   }
-  .dropdown-item-2 {
-    animation: translateX 300ms 200ms ease-in-out forwards;
+  .dropdown-item-1 {
+    animation: growDown 300ms 200ms ease-in-out forwards;
     transform-origin: top center;
   }
 
@@ -85,23 +85,6 @@
     100% {
       opacity: 1;
       transform: scaleY(1);
-    }
-  }
-
-  /* Slide-In Animation */
-  @keyframes translateX {
-    0% {
-      opacity: 0;
-      transform: translateX(60px);
-    }
-
-    80% {
-      transform: translateX(-5px);
-    }
-
-    100% {
-      opacity: 1;
-      transform: translateX(0px);
     }
   }
 </style>

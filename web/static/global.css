@@ -11,15 +11,20 @@
   --color: black;
   --color-dark: white;
 
-  --bg: whitesmoke;
+  --bg: white;
   --bg-dark: black;
 
-  --elevated: white;
+  --elevated: whitesmoke;
   --elevated-dark: var(--foreground-gray);
 
   --nav-size: 80px;
-  --nav-background: var(--custard);
-  --nav-background-dark: black;
+  --nav-bg: white;
+  --nav-bg-dark: black;
+  --nav-hover-color: black;
+  --nav-hover-bg: var(--custard);
+  --nav-box-shadow: rgba(60, 60, 59, 0.75) 0 0 10px;
+
+  --nav-mobile-bg: var(--custard);
 
   --footer-bg: var(--bg);
   --footer-bg-dark: var(--bg-dark);

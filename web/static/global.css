@@ -25,6 +25,7 @@
   --nav-box-shadow: rgba(60, 60, 59, 0.75) 0 0 10px;
 
   --nav-mobile-bg: var(--custard);
+  --nav-mobile-color: white;
 
   --footer-bg: var(--bg);
   --footer-bg-dark: var(--bg-dark);
@@ -35,9 +36,12 @@
   --button-bg: var(--custard);
   --button-bg-dark: black;
 
+  --button-box-shadow: 0 2px 5px 1px rgb(64 60 67 / 16%);
+  --button-box-shadow-hover: 0 2px 8px 1px rgb(64 60 67 / 32%);
+
   /* Timing */
   --dark-mode-timing: 200ms;
-  --animation-timing: 500ms;
+  --animation-timing: 400ms;
 
   /* Typeography */
   --h1: 3.052rem;

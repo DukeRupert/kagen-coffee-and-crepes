@@ -1,5 +1,5 @@
 <script>
-  import Nav from "../components/Nav.svelte";
+  import Nav from "../components/Nav/Nav.svelte";
   import Footer from "../components/Footer.svelte";
   import { dropdown } from "../store";
   export let segment;

@@ -3,7 +3,6 @@
   export let route;
 </script>
 
-<!-- About -->
 <li class="menu-item">
   <a href={route}>{name}</a>
   <slot />
@@ -12,6 +11,7 @@
 <style>
   a {
     text-decoration: none;
+    text-transform: uppercase;
   }
 
   .menu-item {
@@ -20,11 +20,17 @@
     display: flex;
     align-items: center;
     box-sizing: border-box;
-    padding: 0 2rem;
+    padding: 0 1rem;
     transition: all var(--dark-mode-timing) ease-in;
   }
 
   .menu-item:hover {
-    background-color: var(--card-background);
+    color: var(--custard);
+  }
+
+  @media only screen and (max-width: 930px) {
+    .menu-item {
+      display: none;
+    }
   }
 </style>

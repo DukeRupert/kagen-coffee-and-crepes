@@ -53,12 +53,13 @@
 
   .dropdown-menu {
     position: absolute;
+    display: none;
     z-index: 3;
     top: 100%;
     left: 0px;
     width: 180%;
     perspective: 1000px;
-    display: none;
+    color: black;
     transition: all var(--dark-mode-timing);
   }
 

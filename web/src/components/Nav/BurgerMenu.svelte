@@ -1,5 +1,5 @@
 <script>
-  import { dropdown } from "../store";
+  import { dropdown } from "../../store";
 
   function toggleDropdown() {
     dropdown.update((value) => !value);
@@ -23,7 +23,7 @@
     display: none;
   }
 
-  @media only screen and (max-width: 480px) {
+  @media only screen and (max-width: 930px) {
     .burger {
       display: flex;
     }

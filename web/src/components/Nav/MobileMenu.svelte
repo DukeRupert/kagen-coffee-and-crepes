@@ -9,8 +9,16 @@
     { name: "about us", route: "/", onclick: toggleDropdown },
     { name: "join our team", route: "", onclick: toggleDropdown },
     { name: "contact us", route: "", onclick: toggleDropdown },
+  ];
+
+  let focusItems = [
     { name: "order online", route: "", onclick: toggleDropdown },
     { name: "shop", route: "", onclick: toggleDropdown },
+  ];
+
+  let menus = [
+    { name: "Tri-Cities", route: "/", onclick: toggleDropdown },
+    { name: "Spokane", route: "/", onclick: toggleDropdown },
   ];
 
   function toggleDropdown() {
@@ -26,17 +34,26 @@
   <ul class="mobile-menu">
     {#each items as item}
       <li class="mobile-menu-item">
-        <a href={item.route} on:click={item.onclick}>{item.name}</a>
+        <a class="standard-item" href={item.route} on:click={item.onclick}
+          >{item.name}</a
+        >
+      </li>
+    {/each}
+    {#each focusItems as item}
+      <li class="mobile-menu-item">
+        <a class="focus-item" href={item.route} on:click={item.onclick}
+          >{item.name}</a
+        >
       </li>
     {/each}
   </ul>
 </div>
 {#if subMenu}
-  <div class="overlay-red">
+  <div class="overlay-submenu">
     <ul class="mobile-menu">
-      {#each items as item}
+      {#each menus as menu}
         <li class="mobile-menu-item">
-          <a href={item.route} on:click={item.onclick}>{item.name}</a>
+          <a href={menu.route} on:click={menu.onclick}>{menu.name}</a>
         </li>
       {/each}
     </ul>
@@ -44,19 +61,6 @@
 {/if}
 
 <style>
-  .overlay-red {
-    background: red !important;
-    display: flex;
-    position: absolute;
-    top: calc(var(--nav-size) + 1);
-    width: 100vw;
-    height: calc(100vh - var(--nav-size));
-    background: var(--nav-mobile-bg);
-    z-index: 11;
-    animation: growDown var(--animation-timing) ease-in-out forwards;
-    transform-origin: top center;
-  }
-
   a {
     text-decoration: none;
   }
@@ -103,12 +107,30 @@
     background-color: var(--card-background);
   }
 
-  .mobile-menu-item > a {
+  .standard-item {
     height: 100%;
     width: 100%;
     display: flex;
     align-items: center;
     box-sizing: border-box;
+  }
+
+  .focus-item {
+    background: var(--nav-mobile-color);
+    color: var(--nav-mobile-bg);
+    padding: 0 1rem;
+    border-radius: 20px;
+  }
+
+  .overlay-submenu {
+    display: flex;
+    position: absolute;
+    top: calc(var(--nav-size) + 1);
+    width: 100vw;
+    height: calc(100vh - var(--nav-size));
+    background: var(--nav-mobile-bg);
+    z-index: 11;
+    animation: slideLeft var(--animation-timing) ease-in-out forwards;
   }
 
   /* Dropdown Animation */
@@ -125,6 +147,23 @@
     100% {
       opacity: 1;
       transform: scaleY(1);
+    }
+  }
+
+  /* Dropdown Animation */
+  @keyframes slideLeft {
+    0% {
+      opacity: 0;
+      transform: translateX(100%);
+    }
+
+    80% {
+      transform: translateX(-10%);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translateX(0);
     }
   }
 </style>

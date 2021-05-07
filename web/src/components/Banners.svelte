@@ -1,8 +1,10 @@
 <script lang="typescript">
+  import BannerButton from "./BannerButton.svelte";
+
   import Image from "svelte-image";
 </script>
 
-<div class="banner-image">
+<div id="top-banner" class="banner-image">
   <Image
     src="/svelte-image/crepe_strawberry.jpg"
     alt="A latte"
@@ -10,6 +12,7 @@
     wrapperClass="banner"
     placeholderClass="banner"
   />
+  <BannerButton name="order online" route="/" right />
 </div>
 <div class="banner-image">
   <Image
@@ -19,6 +22,7 @@
     wrapperClass="banner"
     placeholderClass="banner"
   />
+  <BannerButton name="menu" route="/" />
 </div>
 <div class="banner-image">
   <Image
@@ -28,12 +32,19 @@
     wrapperClass="banner"
     placeholderClass="banner"
   />
+  <BannerButton name="locations" route="/" right />
 </div>
 
 <style>
   .banner-image {
     position: relative;
     width: 100%;
+  }
+
+  @media (max-width: 975px) {
+    #top-banner {
+      margin-top: var(--nav-size);
+    }
   }
 
   :global(.banner) {

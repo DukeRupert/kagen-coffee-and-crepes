@@ -1,9 +1,6 @@
 <script>
   import MobileMenu from "./MobileMenu.svelte";
-
   import { dropdown } from "../../store";
-  import { fly } from "svelte/transition";
-  import { quadInOut } from "svelte/easing";
   import Logo from "./Logo.svelte";
   import Item from "./Item.svelte";
   import FocusItem from "./FocusItem.svelte";
@@ -20,16 +17,12 @@
     { name: "Join Our Team", route: "/" },
   ];
 
-  function toggleDropdown() {
-    dropdown.update((value) => !value);
-  }
-
   function closeDropdown() {
     dropdown.update((value) => (value = false));
   }
 </script>
 
-<nav>
+<nav id="#nav">
   <ul class="menu">
     <Logo
       src="/logoRooster.svg"
@@ -57,12 +50,17 @@
   nav {
     z-index: 100;
     box-shadow: var(--nav-box-shadow);
+    position: fixed;
+    width: 100%;
+    box-sizing: border-box;
+    background: var(--bg);
   }
 
   ul {
     margin: 0;
     padding: 0;
     list-style-type: none;
+    padding: 0 1rem;
   }
 
   .menu {

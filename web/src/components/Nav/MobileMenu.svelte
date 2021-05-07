@@ -155,6 +155,7 @@
     0% {
       opacity: 0;
       transform: translateX(100%);
+      border-left: 3px black solid;
     }
 
     80% {
@@ -164,6 +165,7 @@
     100% {
       opacity: 1;
       transform: translateX(0);
+      border-left: transparent;
     }
   }
 </style>

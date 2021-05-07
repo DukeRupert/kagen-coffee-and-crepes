@@ -38,7 +38,7 @@
     box-shadow: inset;
   }
 
-  @media only screen and (max-width: 930px) {
+  @media only screen and (max-width: 975px) {
     .focus-item {
       display: none;
     }

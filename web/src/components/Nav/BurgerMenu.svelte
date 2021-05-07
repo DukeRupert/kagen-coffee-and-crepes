@@ -23,7 +23,7 @@
     display: none;
   }
 
-  @media only screen and (max-width: 930px) {
+  @media only screen and (max-width: 975px) {
     .burger {
       display: flex;
     }

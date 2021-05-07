@@ -36,6 +36,9 @@
   --button-bg: var(--custard);
   --button-bg-dark: black;
 
+  --button-hover-color: var(--black);
+  --button-hover-bg: var(--custard);
+
   --button-box-shadow: 0 2px 5px 1px rgb(64 60 67 / 16%);
   --button-box-shadow-hover: 0 2px 8px 1px rgb(64 60 67 / 32%);
 
@@ -59,13 +62,6 @@
 html {
   font-size: 100%;
 } /*16px*/
-
-/* Increase font size when screen is larger than 1080px wide */
-@media only screen and (min-width: 1080px) {
-  html {
-    font-size: 20px;
-  }
-}
 
 body {
   background: var(--background);

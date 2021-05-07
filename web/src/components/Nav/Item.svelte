@@ -28,7 +28,7 @@
     color: var(--custard);
   }
 
-  @media only screen and (max-width: 930px) {
+  @media only screen and (max-width: 975px) {
     .menu-item {
       display: none;
     }

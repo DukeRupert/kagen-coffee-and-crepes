@@ -4,22 +4,20 @@
 :root {
   /* Theme Colors */
   --custard: #f8c24c;
+  --gray: #404040;
+  --light-gray: #999999;
   --red: #cd1222;
   --foreground-gray: #1c1c1e;
 
   /* Theme Variables*/
   --color: black;
-  --color-dark: white;
 
   --bg: white;
-  --bg-dark: black;
 
   --elevated: whitesmoke;
-  --elevated-dark: var(--foreground-gray);
 
   --nav-size: 80px;
   --nav-bg: white;
-  --nav-bg-dark: black;
   --nav-hover-color: black;
   --nav-hover-bg: var(--custard);
   --nav-box-shadow: rgba(60, 60, 59, 0.75) 0 0 10px;
@@ -27,14 +25,12 @@
   --nav-mobile-bg: var(--custard);
   --nav-mobile-color: white;
 
-  --footer-bg: var(--bg);
-  --footer-bg-dark: var(--bg-dark);
+  --footer-bg: var(--gray);
+  --footer-color: var(--light-gray);
+  --footer-title-color: var(--custard);
 
   --button-color: var(--custard);
-  --button-color-dark: black;
-
   --button-bg: var(--custard);
-  --button-bg-dark: black;
 
   --button-hover-color: var(--black);
   --button-hover-bg: var(--custard);

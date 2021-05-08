@@ -59,7 +59,8 @@
     left: 0px;
     width: 180%;
     perspective: 1000px;
-    color: black;
+    color: var(--color);
+    text-transform: uppercase;
     transition: all var(--dark-mode-timing);
   }
 

@@ -1,10 +1,14 @@
-@import url("https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?famiy=EB+Garamond:wght@500&display=swap");
 
 /* global styles */
 :root {
   /* Theme Colors */
   --custard: #f8c24c;
+  --custard-filter: invert(68%) sepia(99%) saturate(307%) hue-rotate(351deg)
+    brightness(100%) contrast(95%);
   --gray: #404040;
+  --gray-filter: invert(64%) sepia(0%) saturate(1422%) hue-rotate(205deg)
+    brightness(97%) contrast(82%);
   --light-gray: #999999;
   --red: #cd1222;
   --foreground-gray: #1c1c1e;

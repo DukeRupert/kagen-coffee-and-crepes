@@ -1,20 +1,36 @@
 <script>
+  let links = [
+    { name: "locations", route: "/" },
+    { name: "merchandise", route: "/" },
+    { name: "about us", route: "/" },
+    { name: "join our team", route: "/" },
+    { name: "contact us", route: "/" },
+  ];
 </script>
 
-<div>
-  <div class="links">
-    <h4>LINKS</h4>
-    <a href="/feedback"><p>Contact Us</p></a>
-    <a href="/join-our-team"><p>Join Our Team</p></a>
+<div class="container">
+  <div>
+    <h5>LINKS</h5>
+    {#each links as link}
+      <a href={link.route}>{link.name}</a>
+    {/each}
   </div>
-  <div class="socialMedia">
-    <h4>FOLLOW US</h4>
-    <a href="https://www.facebook.com/kagencoffeeandcrepes/">
-      <img src="facebook.svg" alt="facebook logo" />
-    </a>
-    <a href="https://www.instagram.com/kagencoffeeandcrepes/">
-      <img src="instagram.svg" alt="instagram logo" />
-    </a>
+  <div>
+    <h5>FOLLOW US</h5>
+    <div class="social-media">
+      <a href="https://www.facebook.com/kagencoffeeandcrepes/">
+        <img src="facebook.svg" alt="facebook logo" />
+      </a>
+      <a href="https://www.instagram.com/kagencoffeeandcrepes/">
+        <img src="instagram.svg" alt="instagram logo" />
+      </a>
+    </div>
+  </div>
+  <div>
+    <img class="logo" src="logoKCC.svg" alt="Kagens Coffee and Crepes logo" />
+  </div>
+  <div>
+    <h5>INSTAGRAM</h5>
   </div>
   <p class="copyright">&copy The Crepe Shop 2020</p>
 </div>
@@ -22,64 +38,58 @@
 <style>
   a {
     text-decoration: none;
+    text-transform: capitalize;
   }
-  div {
+
+  h5 {
+    color: var(--footer-title-color);
+    margin-top: 0;
+  }
+
+  .container {
     position: relative;
     width: 100%;
-    padding: 1em;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    box-sizing: border-box;
+    padding: 3em 1em;
     background-color: var(--footer-bg);
     color: var(--footer-color);
-
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: flex-start;
   }
 
-  img {
-    width: 60px;
-  }
-
-  .links {
-    width: 50%;
-    margin: 0;
-    padding: 0 2%;
-    box-sizing: border-box;
-
+  .container > div {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    align-content: flex-start;
-    text-align: left;
+    align-content: center;
+    width: 240px;
+    margin-bottom: 3rem;
   }
 
-  .socialMedia {
-    width: 50%;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-
+  .social-media {
+    width: 100%;
     display: flex;
     flex-direction: row;
-    justify-content: flex-start;
-    align-content: flex-start;
-    text-align: left;
   }
 
-  h4 {
-    margin: 0;
-    margin-bottom: 0.5em;
-    width: 100%;
-    font-size: 2em;
-    letter-spacing: 2px;
-    color: var(--footer-title-color);
+  .social-media > a {
+    margin: 0 0.5rem;
+    filter: var(--gray-filter);
   }
 
-  p {
-    margin: 0;
-    margin-bottom: 0.5em;
+  .social-media > a:nth-child(1) {
+    margin-left: 0;
+  }
+
+  .social-media img {
+    width: 40px;
+  }
+
+  .logo {
     width: 100%;
-    font-size: 1.5em;
+    max-height: 100%;
+    filter: var(--custard-filter);
   }
 
   .copyright {
@@ -89,13 +99,20 @@
     width: auto;
   }
 
-  @media only screen and (max-width: 655px) {
-    h4 {
-      font-size: 1rem;
+  @media only screen and (max-width: 535px) {
+    .container {
+      flex-direction: column;
+      flex-wrap: nowrap;
+      justify-content: center;
+      align-items: center;
     }
 
-    p {
-      font-size: 1rem;
+    .container > div {
+      align-items: center;
+    }
+
+    .social-media {
+      justify-content: center;
     }
   }
 </style>

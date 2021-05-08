@@ -4,20 +4,21 @@
 :root {
   /* Theme Colors */
   --custard: #f8c24c;
-  --custard-filter: invert(68%) sepia(99%) saturate(307%) hue-rotate(351deg)
-    brightness(100%) contrast(95%);
   --gray: #404040;
-  --gray-filter: invert(64%) sepia(0%) saturate(1422%) hue-rotate(205deg)
-    brightness(97%) contrast(82%);
   --light-gray: #999999;
   --red: #cd1222;
   --foreground-gray: #1c1c1e;
 
+  --white-filter: invert(100%) sepia(100%) saturate(2%) hue-rotate(102deg)
+    brightness(109%) contrast(101%);
+  --custard-filter: invert(68%) sepia(99%) saturate(307%) hue-rotate(351deg)
+    brightness(100%) contrast(95%);
+  --gray-filter: invert(64%) sepia(0%) saturate(1422%) hue-rotate(205deg)
+    brightness(97%) contrast(82%);
+
   /* Theme Variables*/
   --color: black;
-
   --bg: white;
-
   --elevated: whitesmoke;
 
   --nav-size: 80px;
@@ -74,10 +75,16 @@ body {
 }
 
 section {
-  max-width: 1600px;
+  max-width: 1488px;
   margin: 0 auto;
   padding: 0 24px;
   box-sizing: border-box;
+}
+
+.page-wrapper {
+  width: 100%;
+  margin: 80px auto 0 auto;
+  padding: 3rem 0;
 }
 
 p {

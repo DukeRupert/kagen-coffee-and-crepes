@@ -13,7 +13,7 @@
   ];
 
   let abouts = [
-    { name: "About Us", route: "/" },
+    { name: "About Us", route: "/about-us" },
     { name: "Join Our Team", route: "/" },
   ];
 

@@ -6,7 +6,7 @@
   let items = [
     { name: "menu", route: "/", onclick: toggleSubmenu },
     { name: "locations", route: "/", onclick: toggleDropdown },
-    { name: "about us", route: "/", onclick: toggleDropdown },
+    { name: "about us", route: "/about-us", onclick: toggleDropdown },
     { name: "join our team", route: "", onclick: toggleDropdown },
     { name: "contact us", route: "", onclick: toggleDropdown },
   ];

@@ -1,7 +1,7 @@
 <script>
   // FIXME: Validation
 
-  import ButtonForm from "./ButtonForm.svelte";
+  import Button from "./Button.svelte";
 </script>
 
 <div class="form-container">
@@ -52,7 +52,7 @@
       />
     </label>
     <!-- Submit -->
-    <ButtonForm />
+    <Button />
   </form>
 </div>
 

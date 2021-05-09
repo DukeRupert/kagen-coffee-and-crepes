@@ -1,5 +1,5 @@
 <script>
-  import ButtonForm from "./ButtonForm.svelte";
+  import Button from "./Button.svelte";
 
   // FIXME: Validation
 </script>
@@ -140,7 +140,7 @@
       <input type="file" name="resume" />
     </label>
     <!-- Submit Button -->
-    <ButtonForm />
+    <Button />
   </form>
 </div>
 

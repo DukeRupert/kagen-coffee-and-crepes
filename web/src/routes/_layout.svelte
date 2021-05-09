@@ -41,6 +41,7 @@
 
   .parent > main {
     grid-area: main;
+    background: var(--bg);
 
     display: flex;
     flex-direction: column;

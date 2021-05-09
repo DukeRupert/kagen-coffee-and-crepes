@@ -150,7 +150,7 @@
     width: 100%;
     box-sizing: border-box;
     padding: 0.5rem 1rem;
-    background: var(--elevated-background);
+    background: var(--elevated);
     color: var(--elevated-color);
     box-shadow: var(--box-shadow);
   }

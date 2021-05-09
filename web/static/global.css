@@ -18,8 +18,8 @@
 
   /* Theme Variables*/
   --color: black;
-  --bg: white;
-  --elevated: whitesmoke;
+  --bg: whitesmoke;
+  --elevated: white;
   --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.38);
 
   --nav-size: 80px;

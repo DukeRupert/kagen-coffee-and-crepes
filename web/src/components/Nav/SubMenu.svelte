@@ -69,6 +69,10 @@
     transform-origin: top center;
   }
   .dropdown-item-1 {
+    animation: growDown 250ms 150ms ease-in-out forwards;
+    transform-origin: top center;
+  }
+  .dropdown-item-2 {
     animation: growDown 300ms 200ms ease-in-out forwards;
     transform-origin: top center;
   }

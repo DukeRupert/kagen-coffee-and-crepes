@@ -8,7 +8,7 @@
     { name: "locations", route: "/", onclick: toggleDropdown },
     { name: "about us", route: "/about-us", onclick: toggleDropdown },
     { name: "join our team", route: "/join-our-team", onclick: toggleDropdown },
-    { name: "contact us", route: "", onclick: toggleDropdown },
+    { name: "contact us", route: "/contact-us", onclick: toggleDropdown },
   ];
 
   let focusItems = [

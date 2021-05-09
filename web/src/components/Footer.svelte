@@ -2,9 +2,9 @@
   let links = [
     { name: "locations", route: "/" },
     { name: "merchandise", route: "/" },
-    { name: "about us", route: "/" },
-    { name: "join our team", route: "/" },
-    { name: "contact us", route: "/" },
+    { name: "about us", route: "/about-us" },
+    { name: "join our team", route: "/join-our-team" },
+    { name: "contact us", route: "/contact-us" },
   ];
 </script>
 

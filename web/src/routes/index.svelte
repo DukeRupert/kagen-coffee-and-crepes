@@ -3,7 +3,7 @@
 </script>
 
 <svelte:head>
-  <title>Sapper project template</title>
+  <title>Kagens Coffee & Crepes</title>
 </svelte:head>
 
 <Banners />

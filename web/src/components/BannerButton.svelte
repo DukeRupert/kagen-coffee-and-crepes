@@ -30,7 +30,7 @@
     border: 2px solid var(--bg);
     border-radius: 40px;
     color: var(--bg);
-    font-size: var(--h3);
+    font-size: clamp(1rem, 8px + 2vw, var(--h3));
     text-transform: uppercase;
     text-decoration: none;
     letter-spacing: 2px;
@@ -44,7 +44,6 @@
 
   @media (max-width: 900px) {
     .button {
-      font-size: var(--h5);
       letter-spacing: normal;
     }
   }
@@ -63,12 +62,6 @@
     .right {
       left: 0;
       justify-content: flex-end;
-    }
-  }
-
-  @media (max-width: 490px) {
-    .button {
-      font-size: 1rem;
     }
   }
 

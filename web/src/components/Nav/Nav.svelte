@@ -34,7 +34,7 @@
     <Item name="Menu" route="/">
       <SubMenu items={menus} />
     </Item>
-    <Item name="Locations" route="/" />
+    <Item name="Locations" route="/locations" />
     <Item name="About" route="/">
       <SubMenu items={abouts} />
     </Item>

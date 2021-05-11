@@ -7,7 +7,7 @@
 </svelte:head>
 
 <section>
-  <div class="page-wrapper">
+  <div class="restricted page-wrapper">
     <h1>OUR STORY</h1>
     <p>
       Families and friends need a place to gather. A place to visit, catch up

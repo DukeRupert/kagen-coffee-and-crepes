@@ -76,10 +76,14 @@ body {
 }
 
 section {
-  max-width: 1488px;
+  max-width: 1968px;
   margin: 0 auto;
   padding: 0 24px;
   box-sizing: border-box;
+}
+
+section .restricted {
+  max-width: 1488;
 }
 
 .page-wrapper {

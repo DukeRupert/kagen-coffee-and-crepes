@@ -39,6 +39,7 @@
   .banner-image {
     position: relative;
     width: 100%;
+    max-width: 1920px;
   }
 
   @media (max-width: 975px) {
@@ -50,5 +51,6 @@
   :global(.banner) {
     display: block !important;
     max-width: 100%;
+    object-fit: cover;
   }
 </style>

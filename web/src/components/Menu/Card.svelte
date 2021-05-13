@@ -8,90 +8,111 @@
   export let price = {};
 
   // controls for ingredients dropdown list
-  let ingredientsToggle = false;
-  $: iStatus = ingredientsToggle; // reactive toggle to update caret orientation
+  let showIngredients = false;
+  $: iStatus = showIngredients; // reactive toggle to update caret orientation
   function toggleIngredients() {
-    ingredientsToggle = !ingredientsToggle;
+    showIngredients = !showIngredients;
   }
-
-  //imports for fontawesome caret symbols used in dropdown menu
-  // import Fa from "svelte-fa";
-  // import { faCaretUp, faCaretDown } from "@fortawesome/free-solid-svg-icons";
 </script>
 
 <div class="card">
-  <img {src} {alt} in:fade />
-  {#if price}
-    <!-- content here -->
-    <h1>{title}</h1>
-    <div class="price-container">
-      {#each Object.entries(price) as [size, price]}
-        <h1 class="price">{size} ${price}</h1>
-      {/each}
-    </div>
-  {:else}
-    <!-- else content here -->
-    <h1>{price}</h1>
-  {/if}
+  <img class="card-img" {src} {alt} in:fade />
+  <div class="details">
+    <h4>{title}</h4>
+    {#if price}
+      <div class="price-container">
+        {#each Object.entries(price) as [size, price]}
+          <p class="price">{size} ${price}</p>
+        {/each}
+      </div>
+    {/if}
 
-  <button on:click={toggleIngredients}>INGREDIENTS </button>
-  {#if ingredientsToggle}
-    <p transition:slide>
-      {#each ingredients as ingredient}
-        {ingredient} <br />
-      {/each}
-    </p>
-  {/if}
+    <button on:click={toggleIngredients}
+      >ingredients
+      <img
+        class="triangle"
+        class:showIngredients
+        src="/triangle.svg"
+        alt="triangle"
+      /></button
+    >
+    {#if showIngredients}
+      <p transition:slide>
+        {#each ingredients as ingredient}
+          {ingredient} <br />
+        {/each}
+      </p>
+    {/if}
+  </div>
 </div>
 
 <style>
   .card {
     vertical-align: top;
-    text-align: left;
+    text-align: center;
+    background: var(--elevated);
+    border-radius: var(--card-border-radius);
+    box-shadow: var(--box-shadow);
   }
 
-  img {
+  .details {
+    display: flex;
+    flex-direction: column;
+    padding: var(--spacer-md);
+    box-sizing: border-box;
+  }
+
+  h4 {
+    margin-top: 0;
+  }
+
+  .card-img {
     width: 100%;
     position: relative;
     overflow: hidden;
     box-sizing: border-box;
     border: 1px black solid;
-    border-radius: 20px;
+    border-radius: var(--card-border-radius) var(--card-border-radius) 0px 0px;
   }
 
-  h1 {
-    font-size: 19px;
-    font-weight: medium;
+  .triangle {
+    display: inline-block;
+    width: 0.75rem;
+    filter: var(--gray-filter);
+    transition: 200ms ease-in;
   }
+
+  .showIngredients {
+    transform: rotateX(-180deg);
+  }
+
   button {
     display: block;
-    color: gray;
+    color: var(--light-gray);
+    margin: 1rem 0 0;
+    text-transform: uppercase;
+    font-size: 1rem;
     background: none;
     border: none;
-    margin: 0px;
-    padding: 0px;
-    margin-top: 0.5em;
   }
 
   p {
     color: black;
     font-size: 1em;
-    margin: 0px;
+    margin-block-end: 0;
     padding-left: 0.5em;
   }
 
   .price-container {
     display: flex;
     width: 100%;
-    justify-content: left;
+    justify-content: center;
   }
 
   .price {
     margin: 0;
-    padding-right: 1em;
-    font-size: 1em;
+    padding-right: 1rem;
     text-transform: capitalize;
-    font-weight: normal;
   }
 
   @media only screen and (max-width: 655px) {

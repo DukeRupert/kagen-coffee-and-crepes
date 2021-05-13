@@ -42,7 +42,6 @@
   @media (max-width: 800px) {
     .wrapper {
       grid-template-columns: 1fr 1fr;
-      text-align: center;
     }
   }
 

@@ -1,5 +1,5 @@
 <script>
-  import MapCard from "../components/MapCard.svelte";
+  import MapCard from "../components/mapCard.svelte";
 
   const uptownLocation = {
     link:

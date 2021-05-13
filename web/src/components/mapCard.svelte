@@ -12,7 +12,7 @@
 
 <a href={link}><img src={image} {alt} /></a>
 <h4>{title}</h4>
-<a href={link}><p>{@html address}</p></a>
+<a href={link}><p>{address}</p></a>
 <a id="phone" href={phoneNumber}><p>{phone}</p></a>
 <p>{hours}</p>
 

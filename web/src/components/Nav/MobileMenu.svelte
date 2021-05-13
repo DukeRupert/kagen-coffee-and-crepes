@@ -17,8 +17,8 @@
   ];
 
   let menus = [
-    { name: "Tri-Cities", route: "/", onclick: toggleDropdown },
-    { name: "Spokane", route: "/", onclick: toggleDropdown },
+    { name: "Tri-Cities", route: "/menu/tri-cities", onclick: toggleDropdown },
+    { name: "Spokane", route: "/menu/spokane", onclick: toggleDropdown },
   ];
 
   function toggleDropdown() {

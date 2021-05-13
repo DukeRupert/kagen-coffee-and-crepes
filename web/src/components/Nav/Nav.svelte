@@ -8,8 +8,8 @@
   import BurgerMenu from "./BurgerMenu.svelte";
 
   let menus = [
-    { name: "Tri-Cities", route: "/" },
-    { name: "Spokane", route: "/" },
+    { name: "Tri-Cities", route: "/menu/tri-cities" },
+    { name: "Spokane", route: "/menu/spokane" },
   ];
 
   let abouts = [

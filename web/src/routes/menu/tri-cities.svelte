@@ -8,10 +8,9 @@
 </svelte:head>
 
 <section class="restricted page-wrapper navbar-margin">
-  <a class="anchor" id="sweet" />
-
   <!-- Sweet Crepes -->
   <div class="wrapper">
+    <a class="anchor" id="sweet" />
     <!-- <img class="banner" src="/images/sweet.png" alt="sweet" /> -->
     {#each $sweetCrepes as crepe}
       <Card {...crepe} />
@@ -21,8 +20,10 @@
 
 <style>
   .anchor {
-    margin-top: -200px;
-    padding-top: 200px;
+    /* Adjust for fixed headers + standard 3rem page padding */
+    position: absolute;
+    left: 0;
+    top: calc(-2 * var(--nav-size) - 3rem);
   }
 
   .navbar-margin {
@@ -30,6 +31,7 @@
   }
 
   .wrapper {
+    position: relative;
     width: 100%;
     text-align: left;
     display: grid;

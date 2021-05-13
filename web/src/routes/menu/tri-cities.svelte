@@ -11,7 +11,6 @@
   <!-- Sweet Crepes -->
   <div class="wrapper">
     <a class="anchor" id="sweet" />
-    <!-- <img class="banner" src="/images/sweet.png" alt="sweet" /> -->
     {#each $sweetCrepes as crepe}
       <Card {...crepe} />
     {/each}

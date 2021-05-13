@@ -6,8 +6,8 @@
   <title>Kagens Coffee & Crepes | About Us</title>
 </svelte:head>
 
-<section>
-  <div class="restricted page-wrapper">
+<section class="restricted page-wrapper">
+  <div>
     <h1>OUR STORY</h1>
     <p>
       Families and friends need a place to gather. A place to visit, catch up
@@ -46,6 +46,7 @@
     flex-direction: column;
     width: 100%;
     max-width: 800px;
+    margin: 0 auto;
   }
 
   .image-wrapper {

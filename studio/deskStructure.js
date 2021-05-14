@@ -1,9 +1,11 @@
 import S from '@sanity/desk-tool/structure-builder'
-import { MdSettings } from "react-icons/md";
-import { MdPerson } from "react-icons/md";
+import { MdPerson } from 'react-icons/md'
+import { FcLike, FcShop, FcViewDetails, FcSettings } from 'react-icons/fc'
 
 const hiddenDocTypes = listItem =>
-  !['category', 'author', 'post', 'siteSettings'].includes(listItem.getId())
+  !['category', 'author', 'post', 'siteSettings', 'crepe', 'location', 'menu'].includes(
+    listItem.getId()
+  )
 
 export default () =>
   S.list()
@@ -11,13 +13,28 @@ export default () =>
     .items([
       S.listItem()
         .title('Settings')
-        .icon(MdSettings)
+        .icon(FcSettings)
         .child(
           S.editor()
             .id('siteSettings')
             .schemaType('siteSettings')
             .documentId('siteSettings')
         ),
+      S.listItem()
+        .title('Menus')
+        .icon(FcViewDetails)
+        .schemaType('menu')
+        .child(S.documentTypeList('menu').title('Menus')),
+      S.listItem()
+        .title('Crepes')
+        .icon(FcLike)
+        .schemaType('crepe')
+        .child(S.documentTypeList('crepe').title('Crepes')),
+      S.listItem()
+        .title('Locations')
+        .icon(FcShop)
+        .schemaType('location')
+        .child(S.documentTypeList('location').title('Locations')),
       S.listItem()
         .title('Blog posts')
         .schemaType('post')

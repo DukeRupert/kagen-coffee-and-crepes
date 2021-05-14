@@ -10,13 +10,17 @@ import category from './documents/category'
 import post from './documents/post'
 import siteSettings from './documents/siteSettings'
 import crepe from './documents/crepe'
+import location from './documents/location'
+import menu from './documents/menu'
 
 // Object types
 import bodyPortableText from './objects/bodyPortableText'
 import bioPortableText from './objects/bioPortableText'
 import excerptPortableText from './objects/excerptPortableText'
 import mainImage from './objects/mainImage'
-import authorReference from './objects/authorReference'
+import authorReference from './objects/locationReference'
+import locationReference from './objects/authorReference'
+import crepeReference from './objects/crepeReference'
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -28,9 +32,13 @@ export default createSchema({
     // The following are document types which will appear
     // in the studio.
     siteSettings,
+    crepe,
+    location,
+    menu,
+    locationReference,
+    crepeReference,
     post,
     category,
-    crepe,
     author,
     mainImage,
     authorReference,

@@ -7,27 +7,23 @@ export async function get(req, res) {
 
   try {
     // We have access to req.params.slug because the filename has [slug] in it.
-    let { slug } = req.params;
-    slug = titleCase(slug);
-    console.log(slug);
-    const filter = '*[_type == "post" && slug.current == $slug][0]';
+    const { slug } = req.params;
+    const location = titleCase(slug);
+    console.log(location);
+    const filter = '*[_type == "location" && name == $location][0]';
     const projection = `{
-      ...,
-      body[]{
-        ...,
-        children[]{
-          ...,
-          _type == 'authorReference' => {
-            _type,
-            author->
-          }
+      "menu" : *[_type =='menu' && references(^._id)][0]
+        {
+        "location" : name.location->{name},
+        "sweet" : sweet[].crepe->{image,name,price,ingredients},
+        "savory" : savory[].crepe->{image,name,price,ingredients}
         }
-      }
     }`;
 
     const query = filter + projection;
-    const post = await client.fetch(query, { slug });
-    res.end(JSON.stringify({ post }));
+    const data = await client.fetch(query, { location });
+    res.end(JSON.stringify({ data }));
+    console.log(data);
   } catch (err) {
     res.writeHead(500, {
       "Content-Type": "application/json",

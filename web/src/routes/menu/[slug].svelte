@@ -1,6 +1,24 @@
+<script context="module">
+  export async function preload({ params }) {
+    try {
+      console.log(`This is the slug: ${params.slug}`);
+      // As with the server route, we have acces to params.slug here
+      const res = await this.fetch(`api/menu/${params.slug}`);
+      const { data } = await res.json();
+      return { data };
+    } catch (err) {
+      this.error(500, err);
+    }
+  }
+</script>
+
 <script>
   import Card from "../../components/Menu/Card.svelte";
   import { sweetCrepes } from "../../store";
+  export let data;
+  console.log(data);
+  let { location, sweet, savory } = data.menu;
+  console.log(sweet);
 </script>
 
 <svelte:head>

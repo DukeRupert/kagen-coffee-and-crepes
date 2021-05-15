@@ -1,27 +1,25 @@
+<!-- src/components/Menu/Card.svelte -->
 <script>
-  import { slide, fade } from "svelte/transition";
+  import BlockContent from "@movingbrands/svelte-portable-text";
+  import serializers from "./serializers";
+  import { slide } from "svelte/transition";
 
-  export let src;
-  export let alt = "";
-  export let title = "";
-  export let ingredients = ["Coming soon"];
-  export let price = {};
+  export let crepe;
 
-  // controls for ingredients dropdown list
   let showIngredients = false;
-  $: iStatus = showIngredients; // reactive toggle to update caret orientation
+
   function toggleIngredients() {
     showIngredients = !showIngredients;
   }
 </script>
 
 <div class="card">
-  <img class="card-img" {src} {alt} in:fade />
+  <BlockContent blocks={crepe.image} {serializers} />
   <div class="details">
-    <h4>{title}</h4>
-    {#if price}
+    <h4>{crepe.name}</h4>
+    {#if crepe.price}
       <div class="price-container">
-        {#each Object.entries(price) as [size, price]}
+        {#each Object.entries(crepe.price) as [size, price]}
           <p class="price">{size} ${price}</p>
         {/each}
       </div>
@@ -38,7 +36,7 @@
     >
     {#if showIngredients}
       <p transition:slide>
-        {#each ingredients as ingredient}
+        {#each crepe.ingredients as ingredient}
           {ingredient} <br />
         {/each}
       </p>
@@ -64,15 +62,6 @@
 
   h4 {
     margin-top: 0;
-  }
-
-  .card-img {
-    width: 100%;
-    position: relative;
-    overflow: hidden;
-    box-sizing: border-box;
-    border: 1px black solid;
-    border-radius: var(--card-border-radius) var(--card-border-radius) 0px 0px;
   }
 
   .triangle {

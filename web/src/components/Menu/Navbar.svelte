@@ -1,3 +1,4 @@
+<!-- src/components/Menu/Navbar.svelte -->
 <script>
   import Item from "./Item.svelte";
   export let segment;

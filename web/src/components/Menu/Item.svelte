@@ -1,3 +1,4 @@
+<!-- src/components/Menu/Item.svelte -->
 <script>
   export let name;
   export let route;

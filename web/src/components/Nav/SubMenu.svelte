@@ -3,9 +3,9 @@
 </script>
 
 <ul class="dropdown-menu">
-  {#each items as item, i}
+  {#each items as { name, route }, i}
     <li class="dropdown-item-{i}">
-      <a href={item.route}> {item.name} </a>
+      <a rel="external" href={route}> {name} </a>
     </li>
   {/each}
 </ul>

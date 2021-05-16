@@ -1,22 +1,11 @@
 <script>
   import MobileMenu from "./MobileMenu.svelte";
-  import { dropdown } from "../../store";
+  import { dropdown, menuItems, focusItems } from "../../store";
   import Logo from "./Logo.svelte";
   import Item from "./Item.svelte";
   import FocusItem from "./FocusItem.svelte";
   import SubMenu from "./SubMenu.svelte";
   import BurgerMenu from "./BurgerMenu.svelte";
-
-  let menus = [
-    { name: "Tri-Cities", route: "/menu/tri-cities" },
-    { name: "Spokane", route: "/menu/spokane" },
-  ];
-
-  let abouts = [
-    { name: "About Us", route: "/about-us" },
-    { name: "Join Our Team", route: "/join-our-team" },
-    { name: "Contact Us", route: "/contact-us" },
-  ];
 
   function closeDropdown() {
     dropdown.update((value) => (value = false));
@@ -31,15 +20,25 @@
       name="Kagen's Coffee & Crepes"
       onClick={closeDropdown}
     />
-    <Item name="Menu" route="/">
-      <SubMenu items={menus} />
+    {#each $menuItems as { name, route, submenu }}
+      <Item {name} {route}>
+        {#if submenu}
+          <SubMenu items={submenu} />
+        {/if}
+      </Item>
+    {/each}
+    <!-- <Item name="Menu" route="/">
+      <SubMenu items={$locations} />
     </Item>
     <Item name="Locations" route="/locations" />
     <Item name="About" route="/">
       <SubMenu items={abouts} />
-    </Item>
-    <FocusItem name="Order Online" route="/" />
-    <FocusItem name="Shop" route="/" />
+    </Item> -->
+    {#each $focusItems as { name, route }}
+      <FocusItem {name} {route} />
+    {/each}
+    <!-- <FocusItem name="Order Online" route="/" />
+    <FocusItem name="Shop" route="/" /> -->
     <BurgerMenu />
   </ul>
   {#if $dropdown}

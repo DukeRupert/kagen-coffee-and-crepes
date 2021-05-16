@@ -4,7 +4,7 @@
 </script>
 
 <li class="focus-item">
-  <a href={route}>{name}</a>
+  <a rel="external" href={route}>{name}</a>
   <slot />
 </li>
 

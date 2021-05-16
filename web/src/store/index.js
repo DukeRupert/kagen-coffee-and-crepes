@@ -5,7 +5,67 @@ export const mobile = writable(false);
 
 export const dropdown = writable(false);
 
+export const submenuLocation = writable(false);
+
 export const modal = writable(false);
+
+function toggleDropdown() {
+  dropdown.update((value) => !value);
+}
+
+function toggleSubmenu() {
+  submenuLocation.update((value) => !value);
+}
+
+const location = [
+  { name: "Uptown", route: "/menu/uptown", onclick: toggleDropdown },
+  { name: "Spokane", route: "/menu/spokane", onclick: toggleDropdown },
+];
+
+const about = [
+  { name: "About Us", route: "/about-us" },
+  { name: "Join Our Team", route: "/join-our-team" },
+  { name: "Contact Us", route: "/contact-us" },
+];
+
+let menuItem = [
+  { name: "menu", route: "/", submenu: location },
+  { name: "locations", route: "/locations" },
+  { name: "about", route: "/", submenu: about },
+];
+
+export const menuItems = readable(menuItem, () => {
+  console.log("loading menu items");
+  return () => console.log("menu items loaded");
+});
+
+let mobileItem = [
+  { name: "menu", route: "", onclick: toggleSubmenu, internal: true },
+  {
+    name: "locations",
+    route: "/locations",
+    onclick: toggleDropdown,
+    submenu: location,
+  },
+  { name: "about us", route: "/about-us", onclick: toggleDropdown },
+  { name: "join our team", route: "/join-our-team", onclick: toggleDropdown },
+  { name: "contact us", route: "/contact-us", onclick: toggleDropdown },
+];
+
+export const mobileItems = readable(mobileItem, () => {
+  console.log("got a subscriber to mobileItems");
+  return () => console.log("no more subscribers to mobileItems");
+});
+
+let focusItem = [
+  { name: "order online", route: "", onclick: toggleDropdown },
+  { name: "shop", route: "", onclick: toggleDropdown },
+];
+
+export const focusItems = readable(focusItem, () => {
+  console.log("got a subscriber to focusItems");
+  return () => console.log("no more subsribers to focusItems");
+});
 
 // Data for all Crepes
 const crepes = {

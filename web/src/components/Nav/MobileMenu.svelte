@@ -1,64 +1,46 @@
 <script>
-  import { dropdown } from "../../store";
-
-  let subMenu = false;
-
-  let items = [
-    { name: "menu", route: "/", onclick: toggleSubmenu },
-    { name: "locations", route: "/locations", onclick: toggleDropdown },
-    { name: "about us", route: "/about-us", onclick: toggleDropdown },
-    { name: "join our team", route: "/join-our-team", onclick: toggleDropdown },
-    { name: "contact us", route: "/contact-us", onclick: toggleDropdown },
-  ];
-
-  let focusItems = [
-    { name: "order online", route: "", onclick: toggleDropdown },
-    { name: "shop", route: "", onclick: toggleDropdown },
-  ];
-
-  let menus = [
-    { name: "Tri-Cities", route: "/menu/tri-cities", onclick: toggleDropdown },
-    { name: "Spokane", route: "/menu/spokane", onclick: toggleDropdown },
-  ];
-
-  function toggleDropdown() {
-    dropdown.update((value) => !value);
-  }
-
-  function toggleSubmenu() {
-    subMenu = !subMenu;
-  }
+  import { submenuLocation, mobileItems, focusItems } from "../../store";
+  console.log($submenuLocation);
 </script>
 
 <div class="overlay">
   <ul class="mobile-menu">
-    {#each items as item}
+    {#each $mobileItems as { name, route, onclick, submenu, internal }}
       <li class="mobile-menu-item">
-        <a class="standard-item" href={item.route} on:click={item.onclick}
-          >{item.name}</a
+        <!-- mobileItem with submenu must not be treated as external links -->
+        <a
+          class="standard-item"
+          rel={internal ? "" : "external"}
+          href={route}
+          on:click={onclick}>{name}</a
         >
       </li>
+      {#if submenu}
+        {#if $submenuLocation}
+          <div class="overlay-submenu">
+            <ul class="mobile-menu">
+              {#each submenu as { name, route, onclick }}
+                <li class="mobile-menu-item">
+                  <a rel="external" href={route} on:click={onclick}>{name}</a>
+                </li>
+              {/each}
+            </ul>
+          </div>
+        {/if}
+      {/if}
     {/each}
-    {#each focusItems as item}
+    {#each $focusItems as item}
       <li class="mobile-menu-item">
-        <a class="focus-item" href={item.route} on:click={item.onclick}
-          >{item.name}</a
+        <a
+          class="focus-item"
+          rel="external"
+          href={item.route}
+          on:click={item.onclick}>{item.name}</a
         >
       </li>
     {/each}
   </ul>
 </div>
-{#if subMenu}
-  <div class="overlay-submenu">
-    <ul class="mobile-menu">
-      {#each menus as menu}
-        <li class="mobile-menu-item">
-          <a href={menu.route} on:click={menu.onclick}>{menu.name}</a>
-        </li>
-      {/each}
-    </ul>
-  </div>
-{/if}
 
 <style>
   a {

@@ -28,19 +28,33 @@ const about = [
   { name: "Contact Us", route: "/contact-us" },
 ];
 
-let menuItem = [
+let navItem = [
   { name: "menu", route: "/", submenu: location },
   { name: "locations", route: "/locations" },
   { name: "about", route: "/", submenu: about },
+  {
+    name: "order online",
+    route: "",
+    focus: true,
+    onclick: toggleDropdown,
+    external: true,
+  },
+  {
+    name: "shop",
+    route: "",
+    focus: true,
+    onclick: toggleDropdown,
+    external: true,
+  },
 ];
 
-export const menuItems = readable(menuItem, () => {
+export const navItems = readable(navItem, () => {
   console.log("loading menu items");
   return () => console.log("menu items loaded");
 });
 
 let mobileItem = [
-  { name: "menu", route: "", onclick: toggleSubmenu, internal: true },
+  { name: "menu", route: "", onclick: toggleSubmenu, external: false },
   {
     name: "locations",
     route: "/locations",
@@ -50,6 +64,8 @@ let mobileItem = [
   { name: "about us", route: "/about-us", onclick: toggleDropdown },
   { name: "join our team", route: "/join-our-team", onclick: toggleDropdown },
   { name: "contact us", route: "/contact-us", onclick: toggleDropdown },
+  { name: "order online", route: "", focus: true, onclick: toggleDropdown },
+  { name: "shop", route: "", focus: true, onclick: toggleDropdown },
 ];
 
 export const mobileItems = readable(mobileItem, () => {

@@ -1,9 +1,8 @@
 <script>
   import MobileMenu from "./MobileMenu.svelte";
-  import { dropdown, menuItems, focusItems } from "../../store";
+  import { dropdown, navItems } from "../../store";
   import Logo from "./Logo.svelte";
   import Item from "./Item.svelte";
-  import FocusItem from "./FocusItem.svelte";
   import SubMenu from "./SubMenu.svelte";
   import BurgerMenu from "./BurgerMenu.svelte";
 
@@ -20,25 +19,13 @@
       name="Kagen's Coffee & Crepes"
       onClick={closeDropdown}
     />
-    {#each $menuItems as { name, route, submenu }}
-      <Item {name} {route}>
+    {#each $navItems as { name, route, focus, submenu }}
+      <Item {name} {route} {focus}>
         {#if submenu}
           <SubMenu items={submenu} />
         {/if}
       </Item>
     {/each}
-    <!-- <Item name="Menu" route="/">
-      <SubMenu items={$locations} />
-    </Item>
-    <Item name="Locations" route="/locations" />
-    <Item name="About" route="/">
-      <SubMenu items={abouts} />
-    </Item> -->
-    {#each $focusItems as { name, route }}
-      <FocusItem {name} {route} />
-    {/each}
-    <!-- <FocusItem name="Order Online" route="/" />
-    <FocusItem name="Shop" route="/" /> -->
     <BurgerMenu />
   </ul>
   {#if $dropdown}

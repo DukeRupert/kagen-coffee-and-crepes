@@ -1,8 +1,9 @@
 <script>
-  import { dropdown } from "../../store";
+  import { dropdown, submenuLocation } from "../../store";
 
   function toggleDropdown() {
     dropdown.update((value) => !value);
+    submenuLocation.set(false);
   }
 </script>
 

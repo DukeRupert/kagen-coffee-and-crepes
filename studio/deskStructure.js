@@ -1,6 +1,6 @@
 import S from '@sanity/desk-tool/structure-builder'
 import { MdPerson } from 'react-icons/md'
-import { FcLike, FcShop, FcViewDetails, FcSettings } from 'react-icons/fc'
+import { FcLike, FcShop, FcViewDetails, FcSettings, FcIcons8Cup } from 'react-icons/fc'
 
 const hiddenDocTypes = listItem =>
   !['category', 'author', 'post', 'siteSettings', 'crepe', 'location', 'menu'].includes(
@@ -30,6 +30,11 @@ export default () =>
         .icon(FcLike)
         .schemaType('crepe')
         .child(S.documentTypeList('crepe').title('Crepes')),
+      S.listItem()
+        .title('Coffees')
+        .icon(FcIcons8Cup)
+        .schemaType('coffee')
+        .child(S.documentTypeList('coffee').title('Coffees')),
       S.listItem()
         .title('Locations')
         .icon(FcShop)

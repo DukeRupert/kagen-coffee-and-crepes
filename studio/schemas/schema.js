@@ -10,6 +10,7 @@ import category from './documents/category'
 import post from './documents/post'
 import siteSettings from './documents/siteSettings'
 import crepe from './documents/crepe'
+import coffee from './documents/coffee'
 import location from './documents/location'
 import menu from './documents/menu'
 
@@ -33,6 +34,7 @@ export default createSchema({
     // in the studio.
     siteSettings,
     crepe,
+    coffee,
     location,
     menu,
     locationReference,

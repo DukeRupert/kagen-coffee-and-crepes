@@ -2,7 +2,7 @@
   import MobileMenu from "./MobileMenu.svelte";
   import { dropdown, navItems } from "../../store";
   import Logo from "./Logo.svelte";
-  import Item from "./Item.svelte";
+  import NavItem from "./NavItem.svelte";
   import SubMenu from "./SubMenu.svelte";
   import BurgerMenu from "./BurgerMenu.svelte";
 
@@ -20,11 +20,11 @@
       onClick={closeDropdown}
     />
     {#each $navItems as { name, route, focus, submenu }}
-      <Item {name} {route} {focus}>
+      <NavItem {name} {route} {focus}>
         {#if submenu}
           <SubMenu items={submenu} />
         {/if}
-      </Item>
+      </NavItem>
     {/each}
     <BurgerMenu />
   </ul>

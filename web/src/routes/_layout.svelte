@@ -1,5 +1,5 @@
 <script>
-  import Nav from "../components/Nav/Nav.svelte";
+  import NavMenu from "../components/Nav/NavMenu.svelte";
   import Footer from "../components/Footer.svelte";
   import { dropdown } from "../store";
   export let segment;
@@ -11,7 +11,7 @@
 >
   <header />
   <main>
-    <Nav {segment} />
+    <NavMenu {segment} />
     <slot />
   </main>
   <footer>

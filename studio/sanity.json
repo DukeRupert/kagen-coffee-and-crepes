@@ -18,7 +18,6 @@
     "dashboard-widget-document-list",
     "dashboard-widget-netlify",
     "@sanity/code-input",
-    "@sanity/studio-hints",
     "@sanity/vision"
   ],
   "parts": [
@@ -33,10 +32,6 @@
     {
       "implements": "part:@sanity/dashboard/config",
       "path": "dashboardConfig.js"
-    },
-    {
-      "implements": "part:@sanity/default-layout/studio-hints-config",
-      "path": "./studioHintsConfig.js"
     }
   ]
 }

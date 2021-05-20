@@ -5,7 +5,7 @@
 </script>
 
 <div class="form-container">
-  <h2 class="center">Apply</h2>
+  <h2 class="center">Join Our Team</h2>
   <form
     name="applicant"
     action="/success"

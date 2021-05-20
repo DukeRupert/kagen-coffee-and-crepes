@@ -63,7 +63,6 @@
     text-align: left;
     width: 100%;
     max-width: 400px;
-    margin: 3rem auto;
     box-sizing: border-box;
     padding: 0.5rem 1rem;
     background: var(--elevated);

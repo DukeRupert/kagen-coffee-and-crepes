@@ -14,10 +14,10 @@
 
 <section class="restricted page-wrapper container">
   <div class="child">
-    <OpenPositions positions={array} />
+    <ApplicantForm />
   </div>
   <div class="child">
-    <ApplicantForm />
+    <OpenPositions positions={array} />
   </div>
 </section>
 
@@ -29,7 +29,6 @@
   }
 
   .child {
-    margin: 0 2rem 3rem 2rem;
     width: 100%;
     flex-basis: 500px;
   }

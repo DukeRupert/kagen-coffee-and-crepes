@@ -23,13 +23,24 @@
 </svelte:head>
 
 <section class="restricted page-wrapper navbar-margin">
-  <!-- Sweet Crepes -->
-  <div class="wrapper">
-    <a class="anchor" id="sweet" />
-    {#each sweet as crepe}
-      <Card {crepe} />
-    {/each}
-  </div>
+  {#if sweet}
+    <!-- Sweet Crepes -->
+    <div id="sweet" class="wrapper">
+      <a class="anchor" id="sweet" />
+      {#each sweet as crepe}
+        <Card {crepe} />
+      {/each}
+    </div>
+  {/if}
+  {#if savory}
+    <!-- Savory Crepes -->
+    <div id="savory" class="wrapper">
+      <a class="anchor" id="sweet" />
+      {#each savory as crepe}
+        <Card {crepe} />
+      {/each}
+    </div>
+  {/if}
 </section>
 
 <style>

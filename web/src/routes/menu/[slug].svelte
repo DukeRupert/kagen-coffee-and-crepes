@@ -12,10 +12,12 @@
 </script>
 
 <script>
-  import Card from "../../components/Menu/Card.svelte";
+  import Crepe from "../../components/Menu/Crepe.svelte";
+  import Coffee from "../../components/Menu/Coffee.svelte";
+  import Drink from "../../components/Menu/Drink.svelte";
   export let data;
 
-  const { location, sweet, savory } = data.menu;
+  const { location, sweet, savory, coffees, drinks } = data.menu;
 </script>
 
 <svelte:head>
@@ -25,19 +27,37 @@
 <section class="restricted page-wrapper navbar-margin">
   {#if sweet}
     <!-- Sweet Crepes -->
-    <div id="sweet" class="wrapper">
+    <div class="wrapper">
       <a class="anchor" id="sweet" />
       {#each sweet as crepe}
-        <Card {crepe} />
+        <Crepe {crepe} />
       {/each}
     </div>
   {/if}
   {#if savory}
     <!-- Savory Crepes -->
-    <div id="savory" class="wrapper">
-      <a class="anchor" id="sweet" />
+    <div class="wrapper">
+      <a class="anchor" id="savory" />
       {#each savory as crepe}
-        <Card {crepe} />
+        <Crepe {crepe} />
+      {/each}
+    </div>
+  {/if}
+  {#if coffees}
+    <!-- Coffee -->
+    <div class="wrapper">
+      <a class="anchor" id="coffee" />
+      {#each coffees as coffee}
+        <Coffee {coffee} />
+      {/each}
+    </div>
+  {/if}
+  {#if drinks}
+    <!-- Drink -->
+    <div class="wrapper">
+      <a class="anchor" id="drinks" />
+      {#each drinks as drink}
+        <Drink {drink} />
       {/each}
     </div>
   {/if}

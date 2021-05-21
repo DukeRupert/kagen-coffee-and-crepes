@@ -13,9 +13,11 @@ export async function get(req, res) {
     const projection = `{
       "menu" : *[_type =='menu' && references(^._id)][0]
         {
-        "location" : name.location->{name},
-        "sweet" : sweet[].crepe->{image,name,price,ingredients},
-        "savory" : savory[].crepe->{image,name,price,ingredients}
+          "location" : name.location->{name},
+          "sweet" : sweet[].crepe->{image,name,price,ingredients},
+          "savory" : savory[].crepe->{image,name,price,ingredients},
+          "coffees" : coffee[].coffee->{name, price},
+          "drinks" : drink[].drink->{name,price}
         }
     }`;
 

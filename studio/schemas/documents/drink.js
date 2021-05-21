@@ -26,7 +26,7 @@ export default {
       description: 'eg. 3.50',
       validation: Rule =>
         Rule.required()
-          .length(4)
+          .precision(2)
           .error('Price must be a total of 4 characters')
     }
   ],

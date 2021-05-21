@@ -23,6 +23,8 @@ import mainImage from './objects/mainImage'
 import authorReference from './objects/locationReference'
 import locationReference from './objects/authorReference'
 import crepeReference from './objects/crepeReference'
+import coffeeReference from './objects/coffeeReference'
+import drinkReference from './objects/drinkReference'
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -41,6 +43,8 @@ export default createSchema({
     menu,
     locationReference,
     crepeReference,
+    coffeeReference,
+    drinkReference,
     post,
     category,
     author,

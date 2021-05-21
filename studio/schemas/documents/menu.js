@@ -19,6 +19,18 @@ export default {
       type: 'array',
       title: 'Savory Crepes',
       of: [{ type: 'crepeReference' }]
+    },
+    {
+      name: 'coffee',
+      type: 'array',
+      title: 'Coffees',
+      of: [{ type: 'coffeeReference' }]
+    },
+    {
+      name: 'drink',
+      type: 'array',
+      title: 'Drinks',
+      of: [{ type: 'drinkReference' }]
     }
   ],
   preview: {

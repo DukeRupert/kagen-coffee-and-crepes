@@ -9,6 +9,7 @@ import author from './documents/author'
 import category from './documents/category'
 import post from './documents/post'
 import siteSettings from './documents/siteSettings'
+import drink from './documents/drink'
 import crepe from './documents/crepe'
 import coffee from './documents/coffee'
 import location from './documents/location'
@@ -33,6 +34,7 @@ export default createSchema({
     // The following are document types which will appear
     // in the studio.
     siteSettings,
+    drink,
     crepe,
     coffee,
     location,
